@@ -72,7 +72,7 @@ function Practice3() {
  
         }
          
- 
+ const  data =  searchinput.length<1 ? initialDetails : serchresult;
   return (
     <div>
       <div>
@@ -80,7 +80,7 @@ function Practice3() {
       </div>
   <div>
      
-     {  searchinput.length <1 ? initialDetails.map((item,index)=>(
+     {/* {  searchinput.length <1 ? initialDetails.map((item,index)=>(
             <li key={item.id}>
                  <img src={item.imgPath}/> 
                 <div>{item.name}</div>
@@ -94,7 +94,18 @@ function Practice3() {
                 <div>{item.email}</div>
                 <div>{item.address}</div>
             </li>
-        ))}
+        ))} */}
+
+        {
+            data.map((item,index)=>(
+            <li key={item.id}>
+                 <img src={item.imgPath}/> 
+                <div>{item.name}</div>
+                <div>{item.email}</div>
+                <div>{item.address}</div>
+            </li>
+        ))
+        }
       </div>
     </div>
   )
